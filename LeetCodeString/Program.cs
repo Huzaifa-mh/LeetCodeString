@@ -25,6 +25,7 @@
             else if (s[i] == 'X')
             {
                 sum += 10;
+                //aas
                 Console.WriteLine($"{s[i]} = {10}");
             }
             else if (s[i] == 'L')
