@@ -11,9 +11,12 @@ internal class Program
 
         string s = "()";
         Console.WriteLine(s[0]);   
+        string haystack = "hello";
+        string needle = "ll";
+
     }
     
-        public int StrStr(string haystack, string needle)
+        public static int StrStr(string haystack, string needle)
         {
         if (needle.Length == 0) return 0;
 
