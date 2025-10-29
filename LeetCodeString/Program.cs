@@ -14,7 +14,11 @@ internal class Program
         string haystack = "hello";
         string needle = "ll";
         int result = StrStr(haystack, needle);
-        Console.WriteLine(result);
+        //Console.WriteLine(result);
+
+        string str1 = "     My name      is    huzaifa  ";
+        string trimmed = str1.Trim();
+        Console.WriteLine($"{trimmed} and its original length is {str1.Length} and the trimmed length is {trimmed.Length}");
 
     }
     
