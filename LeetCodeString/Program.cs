@@ -12,43 +12,31 @@ internal class Program
         string s = "()";
         Console.WriteLine(s[0]);   
     }
-    public class Solution
-    {
+    
         public int StrStr(string haystack, string needle)
         {
-            int result = -1;
-            int index = -1;
-            for (int i = 0; i < haystack.Length; i++)
+        if (needle.Length == 0) return 0;
+
+        for (int i = 0; i <= haystack.Length - needle.Length; i++)
+        {
+            int j;
+
+            for (j = 0; j < needle.Length; j++)
             {
-                if (haystack[i] == needle[0])
+                if (haystack[i + j] != needle[j])
                 {
-                    index = i;
                     break;
-                }
-                else
-                {
-                    index = -1;
-                    result = -1;
-                }
-            }
-            if (index >= 0)
-            {
-                for (int i = 0; i < needle.Length; i++)
-                {
-                    if (needle[i] == haystack[index + i])
-                    {
-                        result = 0;
-                    }
-                    else
-                    {
-                        result = -1;
-                    }
                 }
             }
 
-            return index;
+            if (j == needle.Length)
+            {
+                return i;
+            }
         }
+        return -1;
     }
+    
     public bool IsValid(string s)
     {
         Stack<char> s1 = new Stack<char>();
