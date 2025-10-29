@@ -10,8 +10,71 @@ internal class Program
         //Console.WriteLine($"result of string {s} is {result}");
 
         string s = "()";
-        Console.WriteLine(s[0]);
-        Stack<char> stack = new Stack<char>();    
+        Console.WriteLine(s[0]);   
+    }
+    public class Solution
+    {
+        public int StrStr(string haystack, string needle)
+        {
+            int result = -1;
+            int index = -1;
+            for (int i = 0; i < haystack.Length; i++)
+            {
+                if (haystack[i] == needle[0])
+                {
+                    index = i;
+                    break;
+                }
+                else
+                {
+                    index = -1;
+                    result = -1;
+                }
+            }
+            if (index >= 0)
+            {
+                for (int i = 0; i < needle.Length; i++)
+                {
+                    if (needle[i] == haystack[index + i])
+                    {
+                        result = 0;
+                    }
+                    else
+                    {
+                        result = -1;
+                    }
+                }
+            }
+
+            return index;
+        }
+    }
+    public bool IsValid(string s)
+    {
+        Stack<char> s1 = new Stack<char>();
+        bool result = true;
+
+        for (int i = 0; i < s.Length; i++)
+        {
+            if (s[i] == '(' || s[i] == '[' || s[i] == '{')
+            {
+                s1.Push(s[i]);
+            }
+            else
+            {
+                if (s1.Count == 0)
+                {
+                    return false;
+                }
+                char top = s1.Pop();
+                if ((s[i] == ')' && top != '(') || (s[i] == ']' && top != '[') || (s[i] == '}' && top != '{'))
+                {
+                    return false;
+                }
+            }
+        }
+
+        return result;
     }
     // this code is fine but their are soo many if statements so the better will be
     public static int RomanToInt(string s)
