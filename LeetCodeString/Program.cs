@@ -4,10 +4,14 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        string s = "MCMXCIV";
-        int result = ImprovedRomanToInt(s);
+        //string s = "MCMXCIV";
+        //int result = ImprovedRomanToInt(s);
 
-        Console.WriteLine($"result of string {s} is {result}");
+        //Console.WriteLine($"result of string {s} is {result}");
+
+        string s = "()";
+        Console.WriteLine(s[0]);
+        Stack<char> stack = new Stack<char>();    
     }
     // this code is fine but their are soo many if statements so the better will be
     public static int RomanToInt(string s)
