@@ -13,6 +13,8 @@ internal class Program
         Console.WriteLine(s[0]);   
         string haystack = "hello";
         string needle = "ll";
+        int result = StrStr(haystack, needle);
+        Console.WriteLine(result);
 
     }
     
